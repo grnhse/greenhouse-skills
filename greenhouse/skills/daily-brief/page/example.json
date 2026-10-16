@@ -1,0 +1,310 @@
+{
+ "skill": "daily-brief",
+ "view": "Priya Raman's view",
+ "asOf": "Thu 15 Oct, 09:00 EDT",
+ "day": "15 Oct",
+ "headline": "5 candidates are waiting on a decision or a scorecard; Anders Whitlock has gone longest without recorded activity, 11 days",
+ "scope": "Across your 4 open reqs as recruiter or coordinator, counting active candidates that you can see",
+ "focus": "decisions",
+ "decisions": [
+  {
+   "name": "Anders Whitlock",
+   "cand": 9001004,
+   "app": 7001004,
+   "req": "Senior Backend Engineer",
+   "stage": "Onsite",
+   "cards": "2 in, 0 draft",
+   "days": 11,
+   "hm": "Dana Whitfield"
+  },
+  {
+   "name": "Kenji Albright",
+   "cand": 9001002,
+   "app": 7001002,
+   "req": "Senior Backend Engineer",
+   "stage": "Onsite",
+   "cards": "4 in, 0 draft",
+   "days": 6,
+   "hm": "Dana Whitfield"
+  },
+  {
+   "name": "Bea Castellanos",
+   "cand": 9002001,
+   "app": 7002001,
+   "req": "Product Designer",
+   "stage": "Portfolio Review",
+   "cards": "2 in, 1 draft",
+   "days": 4,
+   "hm": "Sunil Batra"
+  }
+ ],
+ "scorecards": {
+  "interviewers": 3,
+  "rows": [
+   {
+    "who": "Imani Brooks",
+    "name": "Rosa Lindqvist",
+    "cand": 9001003,
+    "app": 7001003,
+    "req": "Senior Backend Engineer",
+    "on": "Thu 8 Oct",
+    "hours": 166
+   },
+   {
+    "who": "Imani Brooks",
+    "name": "Bea Castellanos",
+    "cand": 9002001,
+    "app": 7002001,
+    "req": "Product Designer",
+    "on": "Mon 12 Oct",
+    "hours": 70,
+    "last": true
+   },
+   {
+    "who": "Gideon Marsh",
+    "name": "Yusuf Demir",
+    "cand": 9003001,
+    "app": 7003001,
+    "req": "Account Executive, Mid-Market",
+    "on": "Tue 13 Oct",
+    "hours": 44,
+    "last": true
+   },
+   {
+    "who": "Hana Sørensen",
+    "name": "Colm Abernathy",
+    "cand": 9003002,
+    "app": 7003002,
+    "req": "Account Executive, Mid-Market",
+    "on": "Wed 14 Oct",
+    "hours": 20,
+    "last": true
+   }
+  ]
+ },
+ "interviews": [
+  {
+   "when": "Thu 15 Oct, 13:00",
+   "name": "Yusuf Demir",
+   "cand": 9003001,
+   "app": 7003001,
+   "req": "Account Executive, Mid-Market"
+  },
+  {
+   "when": "Fri 16 Oct, 10:00",
+   "name": "Leila Haddad",
+   "cand": 9001005,
+   "app": 7001005,
+   "req": "Senior Backend Engineer"
+  },
+  {
+   "when": "Fri 16 Oct, 15:30",
+   "name": "Nadia Ferreira",
+   "cand": 9002002,
+   "app": 7002002,
+   "req": "Product Designer"
+  }
+ ],
+ "quiet": [
+  {
+   "name": "Greta Novak",
+   "cand": 9004001,
+   "app": 7004001,
+   "req": "Data Analyst",
+   "stage": "Final Interview",
+   "days": 21,
+   "late": true
+  },
+  {
+   "name": "Oluwaseun Park",
+   "cand": 9001007,
+   "app": 7001007,
+   "req": "Senior Backend Engineer",
+   "stage": "Technical Interview",
+   "days": 16,
+   "co": "Tomás Okafor"
+  },
+  {
+   "name": "Felix Aubert",
+   "cand": 9002003,
+   "app": 7002003,
+   "req": "Product Designer",
+   "stage": "Portfolio Review",
+   "days": 15,
+   "co": "Tomás Okafor"
+  },
+  {
+   "name": "Mei-Ling Castro",
+   "cand": 9003003,
+   "app": 7003003,
+   "req": "Account Executive, Mid-Market",
+   "stage": "Hiring Manager Interview",
+   "days": 15,
+   "co": "Jo Lambert"
+  },
+  {
+   "name": "Idris Vasquez",
+   "cand": 9004002,
+   "app": 7004002,
+   "req": "Data Analyst",
+   "stage": "Take-Home Test",
+   "days": 14,
+   "co": "Jo Lambert"
+  }
+ ],
+ "new": {
+  "applicants": 9,
+  "fresh": 2,
+  "byReq": [
+   [
+    "Senior Backend Engineer",
+    4
+   ],
+   [
+    "Account Executive, Mid-Market",
+    3
+   ],
+   [
+    "Data Analyst",
+    2
+   ]
+  ],
+  "feedback": [
+   {
+    "name": "Kenji Albright",
+    "cand": 9001002,
+    "app": 7001002,
+    "req": "Senior Backend Engineer"
+   },
+   {
+    "name": "Bea Castellanos",
+    "cand": 9002001,
+    "app": 7002001,
+    "req": "Product Designer"
+   }
+  ]
+ },
+ "offers": [
+  {
+   "name": "Marisol Vance",
+   "cand": 9001001,
+   "app": 7001001,
+   "req": "Senior Backend Engineer",
+   "start": "2 Nov"
+  }
+ ],
+ "snapshot": [
+  {
+   "req": "Senior Backend Engineer",
+   "job": 4012001,
+   "open": 41,
+   "status": "Decisions waiting",
+   "active": 11,
+   "review": 2,
+   "stages": [
+    [
+     "Recruiter Screen",
+     1
+    ],
+    [
+     "Technical Interview",
+     1
+    ],
+    [
+     "Onsite",
+     6
+    ],
+    [
+     "Offer",
+     1
+    ]
+   ],
+   "decisions": 2,
+   "quiet": 1,
+   "new": 4,
+   "needs": "2 in review · 1 at 7 or more days · oldest applied 6 Oct",
+   "hm": "Dana Whitfield"
+  },
+  {
+   "req": "Product Designer",
+   "job": 4012002,
+   "open": 27,
+   "status": "Decisions waiting",
+   "active": 14,
+   "review": 6,
+   "stages": [
+    [
+     "Recruiter Screen",
+     3
+    ],
+    [
+     "Portfolio Review",
+     4
+    ],
+    [
+     "Onsite",
+     1
+    ]
+   ],
+   "decisions": 1,
+   "quiet": 1,
+   "new": 0,
+   "needs": "6 in review · 2 at 7 or more days · oldest applied 5 Oct",
+   "hm": "Sunil Batra"
+  },
+  {
+   "req": "Account Executive, Mid-Market",
+   "job": 4012003,
+   "open": 63,
+   "status": "Nobody past review",
+   "active": 19,
+   "review": 12,
+   "stages": [
+    [
+     "Recruiter Screen",
+     4
+    ],
+    [
+     "Hiring Manager Interview",
+     3
+    ]
+   ],
+   "decisions": 0,
+   "quiet": 1,
+   "new": 3,
+   "needs": "12 in review · 7 at 7 or more days · oldest applied 29 Sep",
+   "hm": "Renata Aguilar"
+  },
+  {
+   "req": "Data Analyst",
+   "job": 4012004,
+   "open": 12,
+   "status": "New",
+   "active": 8,
+   "review": 5,
+   "stages": [
+    [
+     "Take-Home Test",
+     2
+    ],
+    [
+     "Final Interview",
+     1
+    ]
+   ],
+   "decisions": 0,
+   "quiet": 2,
+   "new": 2,
+   "needs": "5 in review · 0 at 7 or more days · oldest applied 10 Oct",
+   "hm": "Dana Whitfield"
+  }
+ ],
+ "notes": [
+  "Not visible with your Greenhouse MCP access: days in stage (needs harvest:application_stages:list)."
+ ],
+ "next": [
+  "/greenhouse:candidate-debrief Anders Whitlock on Senior Backend Engineer",
+  "/greenhouse:pipeline-review Senior Backend Engineer",
+  "/greenhouse:candidate-status Greta Novak"
+ ]
+}

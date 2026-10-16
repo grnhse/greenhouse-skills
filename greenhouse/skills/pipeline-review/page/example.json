@@ -1,0 +1,63 @@
+{
+  "skill": "pipeline-review",
+  "view": "Priya Raman's view",
+  "asOf": "Thu 15 Oct, 09:00 EDT",
+  "headline": "Onsite holds 6 of 11 active candidates on Senior Backend Engineer",
+  "scope": "Senior Backend Engineer · Watch · 11 active (complete) · roster shows 7 of 7 roster rows that you can see",
+  "focus": "active",
+  "status": "Watch",
+  "job": {"name": "Senior Backend Engineer", "id": 4012001, "open": "41 days", "req": "ENG-204", "furthest": "Offer, stage 5 of 5", "recruiter": "Priya Raman", "coordinator": "Tomás Okafor", "seats": "2 open, earliest target start 2 Nov"},
+  "counts": {"active": 11, "activeNote": "complete count", "review": 2, "reviewLongest": 9, "decisions": 2, "quiet": 4, "pastReview": 9},
+  "message": {
+    "text": "Hi Dana,\nMarisol Vance is in Offer and Kenji Albright is in Onsite on Senior Backend Engineer. Six candidates stand in Onsite and two have a decision waiting.\nOne ask: Kenji Albright has had a decision waiting since 9 Oct: what's the call?\nPriya\nNumbers as of Thu 15 Oct",
+    "numbers": "11 active · 18 rejected in 30 days · 1 hired · interviews next 7 days: 3 · offers outstanding: 1"
+  },
+  "risks": [
+    {"rule": "Gone quiet", "text": "4 of 9 active candidates past review have no activity recorded for 7 or more days.", "why": "A week untouched is when candidates accept other interviews."}
+  ],
+  "questions": [
+    {"to": "hm", "text": "Kenji Albright has a decision waiting since 9 Oct: what's the call?", "cand": 9001002, "app": 7001002},
+    {"to": "hm", "text": "Imani Brooks's scorecard on Rosa Lindqvist dated 8 Oct is still a draft: can you chase it?"},
+    {"to": "you", "text": "2 in review, longest 9 days."}
+  ],
+  "reached": "derived",
+  "funnel": [
+    {"name": "Application Review", "active": 2, "rejected": 9, "reached": 30, "pass": "70%"},
+    {"name": "Recruiter Screen", "active": 1, "rejected": 4, "reached": 19, "pass": "early signal: 12 of 16"},
+    {"name": "Technical Interview", "active": 1, "rejected": 3, "reached": 14, "pass": "8 of 11"},
+    {"name": "Onsite", "active": 6, "rejected": 2, "reached": 10, "pass": "2 of 4", "bottleneck": "median 8 days without recorded activity"},
+    {"name": "Offer", "active": 1, "rejected": 0, "reached": 2, "pass": "—"}
+  ],
+  "bottleneck": "Bottleneck: Onsite: 6 active, median 8 days without recorded activity.",
+  "managerStages": "Technical Interview and Onsite",
+  "roster": {
+    "stages": "Technical Interview, Onsite, Offer",
+    "ageLabel": "Days quiet",
+    "optOut": "AI opt-out status could not be checked for these candidates.",
+    "rows": [
+      {"name": "Marisol Vance", "cand": 9001001, "app": 7001001, "stage": "Offer", "days": 2, "feedback": "4 complete", "tally": "3 Yes, 1 Strong Yes", "status": "Offer to send", "detail": {"Source": "Referral", "Offer": "created 13 Oct, not sent yet", "Next": "Send the offer from Greenhouse"}},
+      {"name": "Kenji Albright", "cand": 9001002, "app": 7001002, "stage": "Onsite", "days": 6, "feedback": "4 complete", "tally": "2 Yes, 1 No, 1 Strong Yes", "status": "Needs decision", "detail": {"Source": "Agency", "Decision waiting since": "9 Oct", "Next": "Debrief, then record the outcome in Greenhouse"}},
+      {"name": "Rosa Lindqvist", "cand": 9001003, "app": 7001003, "stage": "Onsite", "days": 7, "feedback": "3 complete, 1 started but not submitted", "tally": "tally hidden while a scorecard is unsubmitted", "status": "Scorecard due", "detail": {"Draft": "Imani Brooks, interviewed 8 Oct", "Source": "Careers page"}},
+      {"name": "Anders Whitlock", "cand": 9001004, "app": 7001004, "stage": "Onsite", "days": 11, "feedback": "2 complete", "tally": "1 Yes, 1 No Decision", "status": "Needs decision", "detail": {"Source": "Sourced", "Decision waiting since": "4 Oct"}},
+      {"name": "Leila Haddad", "cand": 9001005, "app": 7001005, "stage": "Onsite", "days": 9, "feedback": "1 complete", "tally": "1 Yes", "status": "Scheduled", "detail": {"Interview": "Fri 16 Oct, 10:00", "Source": "Referral"}},
+      {"private": true, "cand": 9001006, "app": 7001006, "stage": "Onsite", "days": 3, "feedback": "feedback: not checked", "status": "Scheduled"},
+      {"name": "Oluwaseun Park", "cand": 9001007, "app": 7001007, "stage": "Technical Interview", "days": 13, "feedback": "1 complete", "tally": "1 Yes", "status": "Waiting on candidate", "detail": {"Source": "Careers page"}}
+    ]
+  },
+  "rejections": {
+    "total": 18, "we": 13, "they": 4, "other": 1,
+    "rows": [
+      {"reason": "No reason recorded", "n": 1, "who": "other or none recorded", "from": "Application Review"},
+      {"reason": "Lacking skills or qualifications", "n": 8, "who": "we declined", "from": "Application Review"},
+      {"reason": "Other candidate was stronger", "n": 5, "who": "we declined", "from": "Technical Interview"},
+      {"reason": "Accepted another offer", "n": 3, "who": "withdrew", "from": "Onsite"},
+      {"reason": "Compensation expectations", "n": 1, "who": "withdrew", "from": "Recruiter Screen"}
+    ]
+  },
+  "notes": ["Not visible with your Greenhouse MCP access: days in stage and pass-through from history (needs harvest:application_stages:list)."],
+  "next": [
+    "/greenhouse:candidate-debrief Kenji Albright on Senior Backend Engineer",
+    "/greenhouse:candidate-status Oluwaseun Park",
+    "/greenhouse:daily-brief"
+  ]
+}

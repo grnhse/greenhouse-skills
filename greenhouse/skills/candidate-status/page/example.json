@@ -1,0 +1,38 @@
+{
+  "skill": "candidate-status",
+  "title": "Rosa Lindqvist status",
+  "view": "Priya Raman's view",
+  "asOf": "Thu 15 Oct, 09:00 EDT",
+  "headline": "Rosa Lindqvist is in Onsite for Senior Backend Engineer, stage 4 of 5",
+  "scope": "Every application of Rosa Lindqvist that you can see, 1 active and 1 closed",
+  "meta": [
+    {"label": "Now", "value": "Staff Engineer at Example Co"},
+    {"label": "Tags", "value": "none"},
+    {"label": "Greenhouse", "value": "Open the profile", "href": "https://app.greenhouse.io/people/9001003?application_id=7001003"}
+  ],
+  "tiles": [
+    {"label": "Active applications", "value": "1", "focus": true},
+    {"label": "Closed applications", "value": "1"},
+    {"label": "Scorecards in", "value": "3"},
+    {"label": "Started but not submitted", "value": "1", "sub": "Imani Brooks, dated 8 Oct"}
+  ],
+  "panels": [
+    {"type": "steps", "title": "Senior Backend Engineer: stage 4 of 5", "stages": [
+      {"name": "Application Review", "state": "done"}, {"name": "Recruiter Screen", "state": "done"}, {"name": "Technical Interview", "state": "done"}, {"name": "Onsite", "state": "here"}, {"name": "Offer", "state": "ahead"}]},
+    {"type": "table", "title": "Applications that you can see", "columns": [
+      {"key": "req", "label": "Req", "kind": "link"}, {"key": "status", "label": "Status", "kind": "chip"}, {"key": "stage", "label": "Stage"}, {"key": "since", "label": "Since"}, {"key": "scorecards", "label": "Scorecards"}],
+     "rows": [
+      {"req": {"text": "Senior Backend Engineer", "href": "https://app.greenhouse.io/sdash/4012001"}, "status": {"kind": "good", "label": "Active"}, "stage": "Onsite (4 of 5)", "since": "no activity recorded for 7 days", "scorecards": "3 in · 1 started but not submitted",
+       "_detail": [{"label": "Next", "value": "Scorecard owed from Imani Brooks, scorecard dated 8 Oct"}, {"label": "Ask", "value": "Priya Raman (recruiter) and Tomás Okafor (coordinator)"}, {"label": "Next interview", "value": "none scheduled"}, {"label": "Offer", "value": "not visible"}]},
+      {"req": {"text": "Backend Engineer", "href": "https://app.greenhouse.io/sdash/4011870"}, "status": {"kind": "idle", "label": "Not moving forward 3 Mar"}, "stage": "Recruiter Screen (2 of 5)", "since": "closed 3 Mar", "scorecards": "1 in",
+       "_detail": [{"label": "Reason as recorded", "value": "\"Timing\""}]}]},
+    {"type": "timeline", "title": "Turning points", "events": [
+      {"when": "Feb 2026", "title": "Applied to Backend Engineer"},
+      {"when": "3 Mar", "title": "Not moving forward on Backend Engineer", "sub": "reason as recorded: \"Timing\""},
+      {"when": "Sep 2026", "title": "Applied again, to Senior Backend Engineer", "sub": "203 days after Backend Engineer closed"},
+      {"when": "8 Oct", "title": "Last recorded activity", "chip": {"kind": "wait", "label": "Scorecard due"}}]}
+  ],
+  "judged": "How this was judged: a draft is owed once its scorecard date has passed and is within 30 days, because older drafts are usually abandoned; quiet means no activity recorded for 14 or more days, because two weeks covers a normal scheduling gap; stage k of n counts the req's active stages and says how far the process went, not how well. Tell me different numbers and I'll redo it.",
+  "notes": ["Not visible with your Greenhouse MCP access: offer (needs harvest:offers:list plus the private-data permission)."],
+  "next": ["/greenhouse:candidate-debrief Rosa Lindqvist on Senior Backend Engineer", "/greenhouse:pipeline-review Senior Backend Engineer"]
+}

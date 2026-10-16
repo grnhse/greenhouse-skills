@@ -1,0 +1,270 @@
+{
+ "skill": "interview-week",
+ "view": "Priya Raman's view",
+ "asOf": "Thu 15 Oct, 09:00 EDT",
+ "headline": "7 interviews are on the calendar in the next 7 days across your 4 open reqs, 1 of them today",
+ "scope": "Across your 4 open reqs as recruiter or coordinator, interviews from Thu 15 Oct to Wed 21 Oct that you can see, times in EDT",
+ "window": "15 to 21 Oct",
+ "windowWords": "next 7 days",
+ "zone": "EDT",
+ "focus": "interviews",
+ "counts": {
+  "today": 1,
+  "tomorrow": 2,
+  "declined": 1,
+  "notReplied": 2
+ },
+ "week": [
+  {
+   "day": "Thu 15 Oct",
+   "time": "13:00–13:45",
+   "name": "Yusuf Demir",
+   "cand": 9003001,
+   "app": 7003001,
+   "req": "Account Executive, Mid-Market",
+   "interview": "Hiring Manager Interview",
+   "stage": "Hiring Manager Interview",
+   "panel": "Renata Aguilar",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "45 minutes planned",
+    "Replies": "Renata Aguilar accepted",
+    "Coordinator": "Jo Lambert"
+   }
+  },
+  {
+   "day": "Fri 16 Oct",
+   "time": "10:00–11:00",
+   "name": "Leila Haddad",
+   "cand": 9001005,
+   "app": 7001005,
+   "req": "Senior Backend Engineer",
+   "interview": "System Design",
+   "stage": "Onsite",
+   "panel": "Imani Brooks, Arjun Mistry",
+   "replies": "1 declined",
+   "status": "Panel change needed",
+   "detail": {
+    "Length": "60 minutes planned",
+    "Replies": "Imani Brooks accepted · Arjun Mistry declined",
+    "Coordinator": "Tomás Okafor"
+   }
+  },
+  {
+   "day": "Fri 16 Oct",
+   "time": "15:30–16:30",
+   "name": "Nadia Ferreira",
+   "cand": 9002002,
+   "app": 7002002,
+   "req": "Product Designer",
+   "interview": "Portfolio Presentation",
+   "stage": "Portfolio Review",
+   "panel": "Sunil Batra, Lucía Brandt",
+   "replies": "1 not replied",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "60 minutes planned",
+    "Replies": "Sunil Batra accepted · Lucía Brandt not replied",
+    "Coordinator": "Tomás Okafor"
+   }
+  },
+  {
+   "day": "Mon 19 Oct",
+   "time": "10:00–11:00",
+   "private": true,
+   "cand": 9001006,
+   "app": 7001006,
+   "req": "Senior Backend Engineer",
+   "interview": "Coding Interview",
+   "stage": "Onsite",
+   "panel": "Wei Okonkwo, Imani Brooks",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "60 minutes planned",
+    "Replies": "Wei Okonkwo accepted · Imani Brooks accepted",
+    "Coordinator": "Tomás Okafor"
+   }
+  },
+  {
+   "day": "Mon 19 Oct",
+   "time": "11:00–11:30",
+   "name": "Ingrid Solberg",
+   "cand": 9002004,
+   "app": 7002004,
+   "req": "Product Designer",
+   "interview": "Recruiter Screen",
+   "stage": "Recruiter Screen",
+   "panel": "Priya Raman",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "30 minutes planned",
+    "Replies": "Priya Raman accepted",
+    "Coordinator": "Tomás Okafor"
+   }
+  },
+  {
+   "day": "Tue 20 Oct",
+   "time": "10:00–10:45",
+   "name": "Leila Haddad",
+   "cand": 9001005,
+   "app": 7001005,
+   "req": "Senior Backend Engineer",
+   "interview": "Hiring Manager Interview",
+   "stage": "Onsite",
+   "panel": "Dana Whitfield",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "45 minutes planned",
+    "Replies": "Dana Whitfield accepted",
+    "Coordinator": "Tomás Okafor"
+   }
+  },
+  {
+   "day": "Tue 20 Oct",
+   "time": "14:00–14:45",
+   "name": "Colm Abernathy",
+   "cand": 9003002,
+   "app": 7003002,
+   "req": "Account Executive, Mid-Market",
+   "interview": "Hiring Manager Interview",
+   "stage": "Hiring Manager Interview",
+   "panel": "Renata Aguilar",
+   "replies": "1 not replied",
+   "status": "Scheduled",
+   "detail": {
+    "Length": "45 minutes planned",
+    "Replies": "Renata Aguilar not replied",
+    "Coordinator": "Jo Lambert"
+   }
+  }
+ ],
+ "toSchedule": [
+  {
+   "name": "Oluwaseun Park",
+   "cand": 9001007,
+   "app": 7001007,
+   "req": "Senior Backend Engineer",
+   "interview": "Technical Interview",
+   "sub": "Technical Interview",
+   "days": 16,
+   "detail": {
+    "Coordinator": "Tomás Okafor",
+    "Availability received": "none recorded",
+    "Slot opened": "29 Sep"
+   }
+  },
+  {
+   "name": "Felix Aubert",
+   "cand": 9002003,
+   "app": 7002003,
+   "req": "Product Designer",
+   "interview": "Portfolio Presentation",
+   "sub": "Portfolio Review",
+   "days": 15,
+   "availability": true,
+   "detail": {
+    "Coordinator": "Tomás Okafor",
+    "Availability received": "13 Oct",
+    "Slot opened": "30 Sep"
+   }
+  },
+  {
+   "name": "Mei-Ling Castro",
+   "cand": 9003003,
+   "app": 7003003,
+   "req": "Account Executive, Mid-Market",
+   "interview": "Sales Role Play, Hiring Manager Interview",
+   "sub": "Hiring Manager Interview · 2 interviews",
+   "days": 15,
+   "detail": {
+    "Coordinator": "Jo Lambert",
+    "Availability received": "none recorded",
+    "Slot opened": "30 Sep"
+   }
+  },
+  {
+   "name": "Leila Haddad",
+   "cand": 9001005,
+   "app": 7001005,
+   "req": "Senior Backend Engineer",
+   "interview": "Values Interview",
+   "sub": "Onsite",
+   "days": 9,
+   "detail": {
+    "Coordinator": "Tomás Okafor",
+    "Availability received": "none recorded",
+    "Slot opened": "6 Oct"
+   }
+  }
+ ],
+ "feedback": [
+  {
+   "who": "Imani Brooks",
+   "cards": [
+    {
+     "name": "Rosa Lindqvist",
+     "req": "Senior Backend Engineer",
+     "interview": "System Design",
+     "on": "Thu 8 Oct",
+     "state": "started, not submitted",
+     "hours": 166
+    },
+    {
+     "name": "Bea Castellanos",
+     "req": "Product Designer",
+     "interview": "Portfolio Presentation",
+     "on": "Mon 12 Oct",
+     "state": "started, not submitted",
+     "hours": 70
+    }
+   ]
+  },
+  {
+   "who": "Arjun Mistry",
+   "cards": [
+    {
+     "name": "Rosa Lindqvist",
+     "req": "Senior Backend Engineer",
+     "interview": "System Design",
+     "on": "Thu 8 Oct",
+     "state": "not started",
+     "hours": 166
+    }
+   ]
+  },
+  {
+   "who": "Gideon Marsh",
+   "cards": [
+    {
+     "name": "Yusuf Demir",
+     "req": "Account Executive, Mid-Market",
+     "interview": "Sales Role Play",
+     "on": "Tue 13 Oct",
+     "state": "started, not submitted",
+     "hours": 44
+    }
+   ]
+  },
+  {
+   "who": "Hana Sørensen",
+   "cards": [
+    {
+     "name": "Colm Abernathy",
+     "req": "Account Executive, Mid-Market",
+     "interview": "Sales Role Play",
+     "on": "Wed 14 Oct",
+     "state": "started, not submitted",
+     "hours": 20
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Data Analyst has no interviews on the calendar in this window that you can see."
+ ],
+ "next": [
+  "/greenhouse:candidate-status Oluwaseun Park",
+  "/greenhouse:pipeline-review Senior Backend Engineer",
+  "/greenhouse:daily-brief"
+ ]
+}

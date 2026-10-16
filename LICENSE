@@ -1,0 +1,25 @@
+GREENHOUSE SKILLS LICENSE
+
+Copyright © 2026 Greenhouse Software, Inc. All rights reserved.
+
+1. Scope. These terms govern the Greenhouse skills made available through the Greenhouse MCP server (the "Skills"). The Skills include all instructions, prompts, templates, scorecard frameworks, workflows, related files, and updates. The Skills are proprietary to Greenhouse Software, Inc. ("Greenhouse"). They form part of the SaaS Services provided under the agreement between Greenhouse and its customer that governs use of the Greenhouse platform (the "Customer Agreement"). These terms supplement the Customer Agreement. If they conflict, the Customer Agreement controls. Greenhouse may publish the Skills in a public repository for reference. Public availability grants no right to use the Skills except as stated in these terms. By downloading, installing, or using a Skill, you agree to these terms.
+
+2. Who May Use the Skills. Only two groups may use the Skills: (a) an entity with an active Customer Agreement (each, a "Customer"), and (b) Customer's employees and contractors authorized to use Greenhouse under the Customer Agreement ("Authorized Users"). Anyone may view the Skills where Greenhouse publishes them. No one else receives a license to use, copy, or adapt the Skills without Greenhouse’s written permission.
+
+3. License Grant. Greenhouse grants Customer a limited license during the term of the Customer Agreement. The license is non-exclusive, non-transferable, non-sublicensable, and revocable, and is subject to these terms and the Customer Agreement. Under it, Authorized Users may use the Skills with AI tools connected to the Greenhouse MCP server (each, an "AI Tool"), solely for Customer's internal hiring purposes. Customer may adapt the Skills for that internal use. Adaptations remain subject to these terms. The provider of an AI Tool may process the Skills solely to provide the AI Tool to Customer.
+
+4. Restrictions. Customer must not, and must not let any person: (a) copy, publish, distribute, sell, sublicense, or disclose any Skill or adaptation to anyone other than Authorized Users, including by posting it to any public or shared repository, marketplace, or prompt library, except for copies the repository host’s terms require, such as forking; (b) use the Skills to provide services to third parties or for any purpose other than Customer's internal hiring; (c) use the Skills to develop, train, fine-tune, or improve any AI model, or any product or service that competes with Greenhouse; (d) remove or change any copyright, confidentiality, or license notice; or (e) get around any Greenhouse access control on the Skills.
+
+5. Ownership. Greenhouse and its licensors keep all right, title, and interest in the Skills and all adaptations of them. Greenhouse grants no rights except those stated in Section 3. Greenhouse claims no ownership of output that an AI Tool generates from Customer's data using the Skills ("Output"), and the Customer Agreement governs Output. Output gives Customer no rights in any part of a Skill that the Output reproduces.
+
+6. No Trademark Rights. These terms grant no right to use Greenhouse’s names, logos, or trademarks.
+
+7. Hiring Decisions. The Skills provide process guidance only. They do not make hiring decisions and are not legal advice. Customer is solely responsible for its hiring decisions. Customer is also responsible for applying human judgment and for complying with all applicable employment, anti-discrimination, privacy, and automated decision-making laws. AI Tools are third-party products, and Greenhouse is not responsible for them or their output.
+
+8. Disclaimer. Except as expressly stated in the Customer Agreement, the Skills are provided "AS IS," without warranties of any kind, to the maximum extent permitted by law.
+
+9. Changes and Termination. Greenhouse may update, change, restrict, or disable any Skill at any time. This license ends automatically when the Customer Agreement ends or when Customer breaches these terms. When the license ends, Customer must stop using the Skills and delete all copies and adaptations.
+
+10. Enforcement. Unauthorized use or disclosure of the Skills infringes Greenhouse's copyright. Unauthorized use would cause Greenhouse irreparable harm, and Greenhouse may seek injunctive relief in addition to any other remedy.
+
+11. Contact. Send license questions to legal@greenhouse.io.

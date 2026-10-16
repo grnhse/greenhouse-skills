@@ -1,0 +1,23 @@
+*.log
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+# editors and tooling
+.vscode/
+.idea/
+*.swp
+*~
+__pycache__/
+.claude/
+node_modules/
+.env
+.env.*
+*.key
+*.secret
+internal/
+# evals stay local: the suite is maintained outside the repository
+greenhouse/evals/
+# pages the skills build
+greenhouse-*.html

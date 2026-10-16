@@ -1,0 +1,16 @@
+{
+  "name": "greenhouse-skills",
+  "owner": {
+    "name": "Greenhouse Software, Inc.",
+    "url": "https://www.greenhouse.com"
+  },
+  "description": "Greenhouse recruiting skills on the Greenhouse MCP connector (open beta)",
+  "plugins": [
+    {
+      "name": "greenhouse",
+      "source": "./greenhouse",
+      "category": "productivity",
+      "description": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta."
+    }
+  ]
+}

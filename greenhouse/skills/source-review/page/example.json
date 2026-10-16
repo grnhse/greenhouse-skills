@@ -1,0 +1,193 @@
+{
+ "skill": "source-review",
+ "view": "Priya Raman's view",
+ "asOf": "Thu 15 Oct, 09:00 EDT",
+ "headline": "30 applications on Senior Backend Engineer in the last 90 days came from 6 sources; Careers page brought the most, 11",
+ "scope": "Senior Backend Engineer · applications created 17 Jul to 15 Oct (90 days) · 30 applications (complete) from 6 sources, 2 with no source recorded, that you can see",
+ "focus": "applications",
+ "job": {
+  "name": "Senior Backend Engineer",
+  "id": 4012001,
+  "open": "41 days, so this is every application on the req",
+  "req": "ENG-204",
+  "first": "Recruiter Screen",
+  "final": "Onsite"
+ },
+ "window": "17 Jul to 15 Oct, 90 days, by application date",
+ "since": "17 Jul",
+ "days": 90,
+ "reached": "derived",
+ "counts": {
+  "applications": 30,
+  "note": "created in the last 90 days · complete count",
+  "first": 19,
+  "final": 10,
+  "hired": 1,
+  "referrer": 6,
+  "blank": 2,
+  "sources": 6,
+  "nobodyPast": 1
+ },
+ "sources": [
+  {
+   "name": "No source recorded",
+   "blank": true,
+   "apps": 2,
+   "active": [
+    [
+     "Application Review",
+     1
+    ]
+   ],
+   "first": 1,
+   "final": 0,
+   "hired": 0,
+   "ended": 1,
+   "by": "we declined 1",
+   "from": "Recruiter Screen"
+  },
+  {
+   "name": "Careers page",
+   "type": "Company marketing",
+   "apps": 11,
+   "active": [
+    [
+     "Technical Interview",
+     1
+    ],
+    [
+     "Onsite",
+     2
+    ]
+   ],
+   "first": 8,
+   "final": 4,
+   "hired": 1,
+   "ended": 7,
+   "by": "we declined 5 · withdrew 2",
+   "from": "Application Review"
+  },
+  {
+   "name": "Job board",
+   "type": "Third-party boards",
+   "apps": 8,
+   "active": [
+    [
+     "Application Review",
+     1
+    ],
+    [
+     "Recruiter Screen",
+     1
+    ]
+   ],
+   "first": 2,
+   "final": 0,
+   "hired": 0,
+   "ended": 6,
+   "by": "we declined 5 · other or none recorded 1",
+   "from": "Application Review"
+  },
+  {
+   "name": "Referral",
+   "type": "Referrals",
+   "apps": 5,
+   "active": [
+    [
+     "Onsite",
+     2
+    ],
+    [
+     "Offer",
+     1
+    ]
+   ],
+   "first": 5,
+   "final": 4,
+   "hired": 0,
+   "ended": 2,
+   "by": "we declined 1 · withdrew 1",
+   "from": "Technical Interview and Onsite, 1 each"
+  },
+  {
+   "name": "Sourced",
+   "type": "Prospecting",
+   "apps": 2,
+   "active": [
+    [
+     "Onsite",
+     1
+    ]
+   ],
+   "first": 2,
+   "final": 1,
+   "hired": 0,
+   "ended": 1,
+   "by": "withdrew 1",
+   "from": "Technical Interview"
+  },
+  {
+   "name": "Agency",
+   "type": "Agencies",
+   "apps": 1,
+   "active": [
+    [
+     "Onsite",
+     1
+    ]
+   ],
+   "first": 1,
+   "final": 1,
+   "hired": 0,
+   "ended": 0
+  },
+  {
+   "name": "Event",
+   "type": "Events",
+   "apps": 1,
+   "first": 0,
+   "final": 0,
+   "hired": 0,
+   "ended": 1,
+   "by": "we declined 1",
+   "from": "Application Review"
+  }
+ ],
+ "all": "All applications: 30 · 11 active · 19 of 30 reached Recruiter Screen (63%) · 10 of 30 reached Onsite (33%) · 1 hired · 18 ended (we declined 13 · withdrew 4 · other or none recorded 1).",
+ "fresh": "7 of the 30 were created in the last 14 days and have had little time to move.",
+ "shows": [
+  {
+   "lead": "No source recorded",
+   "text": "2 of the 30 applications; 1 is active in Application Review and 1 ended from Recruiter Screen.",
+   "sub": "A blank source is a finding: these can't be counted for any channel."
+  },
+  {
+   "lead": "With a referrer",
+   "text": "6 of the 30 applications carry a referrer: 4 active, 6 reached Recruiter Screen, 5 reached Onsite, 0 hired, 2 ended. 5 of them sit under the source Referral.",
+   "sub": "This is Greenhouse's \"who gets credit\" field; it can also hold an agency recruiter or the colleague who added the candidate, and these applications are also counted under their source. Referrers are not named here."
+  },
+  {
+   "lead": "Nobody past review",
+   "text": "Event: 1 application, none reached Recruiter Screen: 0 still active before it, 1 ended before it.",
+   "sub": "1 of the 6 sources has applications and nobody who reached Recruiter Screen."
+  },
+  {
+   "lead": "Behind the late stages",
+   "text": "Technical Interview, Onsite and Offer hold 8 active applications: Careers page 3, Referral 3, Agency 1, Sourced 1."
+  }
+ ],
+ "questions": [
+  "2 applications have no source recorded: can the source be filled in, and how are they being added?",
+  "Job board brought 8 applications; 2 reached Recruiter Screen and none reached Onsite: what would we change about where or how the req is posted there?",
+  "Referral brought 5 of the 30 applications and 3 of the 8 now active in Technical Interview, Onsite and Offer: is there room to do more there?",
+  "4 of the 18 ended applications withdrew, 2 of them from Careers page: what did they tell us on the way out?"
+ ],
+ "notes": [
+  "Not visible with your Greenhouse MCP access: reached from stage history (needs harvest:application_stages:list). A Site Admin can enable them under Configure > Dev Center > MCP Access > Endpoints, or you may have left them unticked when connecting; saving makes everyone in the organization reconnect, and the tool list can take up to 10 minutes to refresh. /greenhouse:configure lists everything."
+ ],
+ "next": [
+  "/greenhouse:pipeline-review Senior Backend Engineer",
+  "/greenhouse:source-review Product Designer",
+  "/greenhouse:daily-brief"
+ ]
+}

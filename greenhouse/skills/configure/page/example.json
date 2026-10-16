@@ -1,0 +1,103 @@
+{
+ "skill": "configure",
+ "view": "Priya Raman's view",
+ "asOf": "Thu 15 Oct, 09:00 EDT",
+ "headline": "You're set up, Priya: matched to Priya Raman, the recruiter on 4 open reqs",
+ "scope": "Covering the tools listed in this session and the open reqs where you're recruiter or coordinator that you can see",
+ "matched": "Priya Raman",
+ "role": "recruiter",
+ "focus": "decisions",
+ "counts": {
+  "reqs": 4,
+  "active": 52,
+  "decisions": 3,
+  "decisionsNote": "2 on Senior Backend Engineer",
+  "quiet": 5
+ },
+ "skills": [
+  {
+   "skill": "daily-brief",
+   "status": "Partial",
+   "try": "What needs me today?",
+   "missing": "For now: today's interviews and offers from your Greenhouse dashboard"
+  },
+  {
+   "skill": "candidate-status",
+   "status": "Partial",
+   "try": "Where is <name>?",
+   "missing": "For now: next interview and offer from the candidate's profile"
+  },
+  {
+   "skill": "candidate-debrief",
+   "status": "Partial",
+   "try": "Who still owes a scorecard on Senior Backend Engineer?",
+   "missing": "For now: add the note or move the stage yourself in Greenhouse"
+  },
+  {
+   "skill": "pipeline-review",
+   "status": "Ready",
+   "try": "How is Senior Backend Engineer doing?"
+  },
+  {
+   "skill": "scorecard-draft",
+   "status": "Partial",
+   "try": "Write up my interview feedback for <name>",
+   "missing": "For now: paste the text into the scorecard"
+  },
+  {
+   "skill": "interview-week",
+   "status": "Partial",
+   "try": "What interviews are on this week?",
+   "missing": "For now: interview times and panels from your Greenhouse dashboard"
+  },
+  {
+   "skill": "source-review",
+   "status": "Ready",
+   "try": "Where are Senior Backend Engineer's applicants coming from?"
+  }
+ ],
+ "note": "Hi, I've started using Greenhouse from my AI assistant, and a few things I'd use every week aren't switched on for the connector. Could you turn these on under Configure > Dev Center > MCP Access > Endpoints?\n- harvest:interviews:list: today's interviews and who hasn't started a scorecard\n- harvest:offers:list: offers in flight\n- harvest:notes:create: a debrief note recorded from here\n- harvest:applications:move: a stage move from here\nNothing changes in Greenhouse without me: I confirm every change myself, one at a time, and nothing is ever deleted. Once it's done I'll reconnect Greenhouse so the new permissions take effect. Thanks, Priya",
+ "reqs": [
+  {
+   "req": "Account Executive, Mid-Market",
+   "job": 4012003,
+   "active": 19,
+   "decisions": 0,
+   "quiet": 1,
+   "new": 3
+  },
+  {
+   "req": "Product Designer",
+   "job": 4012002,
+   "active": 14,
+   "decisions": 1,
+   "quiet": 1,
+   "new": 0
+  },
+  {
+   "req": "Senior Backend Engineer",
+   "job": 4012001,
+   "active": 11,
+   "decisions": 2,
+   "quiet": 1,
+   "new": 4
+  },
+  {
+   "req": "Data Analyst",
+   "job": 4012004,
+   "active": 8,
+   "decisions": 0,
+   "quiet": 2,
+   "new": 2
+  }
+ ],
+ "notes": [
+  "Not visible with your Greenhouse MCP access: today's interviews, offers in flight, notes and stage moves from here (needs harvest:interviews:list, harvest:offers:list, harvest:notes:create, harvest:applications:move)."
+ ],
+ "next": [
+  "/greenhouse:daily-brief",
+  "/greenhouse:pipeline-review Senior Backend Engineer",
+  "/greenhouse:candidate-status <name>",
+  "/greenhouse:candidate-debrief <name> on Senior Backend Engineer"
+ ]
+}

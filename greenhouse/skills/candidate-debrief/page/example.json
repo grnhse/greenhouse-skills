@@ -1,0 +1,50 @@
+{
+  "skill": "candidate-debrief",
+  "title": "Kenji Albright debrief",
+  "view": "Priya Raman's view",
+  "asOf": "Thu 15 Oct, 09:00 EDT",
+  "audience": "hiring-team",
+  "headline": "4 of 5 scorecards are in: Strong Yes 1 · Yes 2 · No 1 · Definitely Not 0 · No Decision 0. Imani Brooks's is still a draft.",
+  "scope": "Senior Backend Engineer · scorecards that you can see",
+  "meta": [
+    {"label": "Job", "value": "Senior Backend Engineer"},
+    {"label": "Stage", "value": "Onsite, 4 of 5"},
+    {"label": "Next stage", "value": "Offer"},
+    {"label": "Needs Decision", "value": "Greenhouse marks a decision as waiting"},
+    {"label": "Greenhouse", "value": "Open the profile", "href": "https://app.greenhouse.io/people/9001002?application_id=7001002"}
+  ],
+  "tiles": [
+    {"label": "Scorecards in", "value": "4 of 5", "focus": true},
+    {"label": "Still owed", "value": "1", "sub": "Imani Brooks, 7 days"},
+    {"label": "Interviews to come", "value": "0"}
+  ],
+  "panels": [
+    {"type": "steps", "title": "Where Kenji Albright is in the plan", "stages": [
+      {"name": "Application Review", "state": "done"}, {"name": "Recruiter Screen", "state": "done"}, {"name": "Technical Interview", "state": "done"}, {"name": "Onsite", "state": "here", "sub": "since 6 Oct"}, {"name": "Offer", "state": "ahead"}]},
+    {"type": "tally", "title": "Ratings as given (complete scorecards only)", "foot": "Shown as given: no average, no majority, no leaning.", "ratings": [
+      {"label": "Strong Yes", "people": ["Wren Castillo"]},
+      {"label": "Yes", "people": ["Dev Malhotra", "Sofia Brandt"]},
+      {"label": "No", "people": ["Gideon Marsh"]},
+      {"label": "Definitely Not", "people": []},
+      {"label": "No Decision", "people": []}]},
+    {"type": "table", "title": "Interviewers", "columns": [
+      {"key": "who", "label": "Interviewer"}, {"key": "when", "label": "Interviewed"}, {"key": "rating", "label": "Rating"}, {"key": "status", "label": "Status"}, {"key": "takeaways", "label": "Takeaways"}],
+     "rows": [
+      {"who": "Dev Malhotra", "when": "Tue 6 Oct", "rating": "Yes", "status": "complete", "takeaways": "\"Walked through the queue redesign clearly and named the trade-off he would revisit.\""},
+      {"who": "Wren Castillo", "when": "Wed 7 Oct", "rating": "Strong Yes", "status": "complete", "takeaways": {"text": "\"Best systems-design conversation I have had this quarter.\"", "sub": "to the team: \"Happy to pair with him in week one.\""}},
+      {"who": "Gideon Marsh", "when": "Wed 7 Oct", "rating": "No", "status": {"text": "complete", "sub": "submitted 5 days after the interview"}, "takeaways": "\"Did not get to a working solution for the rate limiter in the time we had.\""},
+      {"who": "Sofia Brandt", "when": "Thu 8 Oct", "rating": "Yes", "status": "complete", "takeaways": "\"Clear on how he ran the incident review; asked good questions about on-call.\""},
+      {"who": "Imani Brooks", "when": "Thu 8 Oct", "rating": "—", "status": "draft, not submitted", "takeaways": ""}]},
+    {"type": "list", "title": "Where they agree and disagree", "half": true, "items": [
+      {"lead": "Gideon Marsh (No) vs Wren Castillo (Strong Yes):", "text": "\"Did not get to a working solution for the rate limiter\" beside \"Best systems-design conversation I have had this quarter.\""},
+      {"lead": "Where they agree:", "text": "Yes or Strong Yes from three of four on communication."}]},
+    {"type": "list", "title": "Open questions for the panel", "half": true, "items": [
+      {"text": "Do we decide without Imani Brooks's scorecard, or wait?", "copy": true},
+      {"text": "Gideon's No rests on the rate-limiter exercise: was that a gap in skill or in time?", "copy": true}]},
+    {"type": "list", "title": "Owed", "empty": "Every scorecard for this round is in.", "items": [
+      {"lead": "Imani Brooks:", "text": "interviewed Thu 8 Oct, scorecard still draft (7 days)", "copy": "The debrief for Kenji Albright (Senior Backend Engineer) is coming up and your scorecard dated 8 Oct is still a draft. Could you submit it before then? If the interview moved or you weren't on it, let Priya Raman know."}]}
+  ],
+  "judged": "How this was counted: complete scorecards only; a draft is owed once its interview date has passed; \"submitted n days after\" shows past two calendar days: the gap is worth knowing, never a discount; k of n counts active stages. Tell me different numbers and I'll redo it.",
+  "notes": ["AI opt-out status could not be checked.", "Private notes not shown.", "Interview feedback: hiring team only, never to a candidate."],
+  "next": ["/greenhouse:candidate-status Kenji Albright", "/greenhouse:pipeline-review Senior Backend Engineer"]
+}

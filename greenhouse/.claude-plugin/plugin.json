@@ -1,0 +1,26 @@
+{
+  "name": "greenhouse",
+  "displayName": "Greenhouse",
+  "version": "0.1.0",
+  "description": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta.",
+  "author": {
+    "name": "Greenhouse Software, Inc.",
+    "url": "https://www.greenhouse.com"
+  },
+  "homepage": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+  "repository": "https://github.com/grnhse/greenhouse-skills",
+  "documentationUrl": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+  "supportUrl": "https://support.greenhouse.io",
+  "privacyPolicyUrl": "https://www.greenhouse.com/ai-addendum",
+  "termsOfServiceUrl": "https://www.greenhouse.com/legal",
+  "license": "© 2026 Greenhouse Software, Inc. Greenhouse customer use only. See LICENSE.",
+  "keywords": [
+    "greenhouse",
+    "recruiting",
+    "ats",
+    "hiring",
+    "talent",
+    "scorecards",
+    "pipeline"
+  ]
+}
