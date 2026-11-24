@@ -107,7 +107,7 @@ No candidate summaries or comparisons here, so the AI opt-out check does not app
 
 ## Output
 
-Page: read `page/PAGE.md` in this skill's folder before rendering and follow it. It holds the page, the short reply and the full Output these steps refer to. If it cannot be read: with artifacts in your app, put every section these steps computed into one titled document artifact (a heading and a table or list per section, links kept, the thresholds line last), and reply in chat with the headline, up to three linked bullets for what needs the user, "The rest is in the document." and Next. Without artifacts: the headline, the scope line, up to three linked rows that need the user, rule 1 and rule 2 lines, Next; a table only when asked.
+Page: read `page/PAGE.md` in this skill's folder before rendering and follow it. It holds the page, the short reply and the full Output these steps refer to. If it cannot be read: when your app can show a rendered document, put every section these steps computed into one titled document (a heading and a table or list per section, links kept, the thresholds line last), and reply in chat with the headline, up to three linked bullets for what needs the user, "The rest is in the document." and Next. Otherwise: the headline, the scope line, up to three linked rows that need the user, rule 1 and rule 2 lines, Next; a table only when asked.
 
 ## Edge cases
 

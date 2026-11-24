@@ -105,4 +105,4 @@ Next prompts with copy buttons: /greenhouse:pipeline-review Senior Backend Engin
 
 ## When no page can be built
 
-Either run. If the app can show a file or an artifact but cannot run the builder, the skill writes the same page by hand as a still page: the same facts, tiles and sections, with no buttons, so the reply says only "It's all on the page." If the app has no way to show a file or an artifact at all: the short reply on its own, with "Ask for the table, the referrals, the questions or the full review." in place of the page line, then one plain line: "I couldn't open a page here, so it's all in chat: ask for any section."
+Either run. If the app can show a file or a rendered document but cannot run the builder, the skill writes the same page by hand as a still page: the same facts, tiles and sections, with no buttons, so the reply says only "It's all on the page." If the app can show neither a file nor a rendered document: the short reply on its own, with "Ask for the table, the referrals, the questions or the full review." in place of the page line, then one plain line: "I couldn't open a page here, so it's all in chat: ask for any section."
