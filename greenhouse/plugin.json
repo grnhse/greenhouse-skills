@@ -24,9 +24,9 @@
       "interface": {
         "displayName": "Greenhouse",
         "shortDescription": "Hiring workflows on Greenhouse",
-        "longDescription": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta.",
+        "longDescription": "Greenhouse is a hiring platform. This plugin brings your Greenhouse recruiting data into chat for recruiters, coordinators and hiring teams: a daily brief, the week's interviews, where a candidate stands, interview debriefs, pipeline and source reviews for a job, draft scorecards from your own notes, and an access check. Most answers can open as a page. Reads follow your Greenhouse permissions. Before it adds a note, moves a candidate to a new stage or saves a draft scorecard, it shows you the change and waits for your yes. It sends reminders only through your own chat or email tool. Greenhouse MCP is in open beta.",
         "developerName": "Greenhouse Software, Inc.",
-        "category": "Productivity",
+        "category": "Business & Operations",
         "websiteURL": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
         "supportURL": "https://support.greenhouse.io",
         "privacyPolicyURL": "https://www.greenhouse.com/ai-addendum",
