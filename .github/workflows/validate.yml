@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 22
       # Pinned: the gate's behaviour follows this version. Bump it with each plugin release (CONTRIBUTING, "Commits and versions").
-      - run: npm install -g @anthropic-ai/claude-code@2.1.299
+      - run: npm install -g @anthropic-ai/claude-code@2.1.331
       - run: python3 .github/scripts/inject_shared_rules.py --check
       - run: python3 .github/scripts/lint_skills.py
       - run: claude plugin validate --strict ./greenhouse

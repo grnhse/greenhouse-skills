@@ -1,0 +1,94 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "greenhouse",
+  "version": "0.2.0",
+  "description": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta.",
+  "author": {
+    "name": "Greenhouse Software, Inc.",
+    "url": "https://www.greenhouse.com"
+  },
+  "homepage": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+  "repository": "https://github.com/grnhse/greenhouse-skills",
+  "license": "© 2026 Greenhouse Software, Inc. Greenhouse customer use only. See LICENSE.",
+  "keywords": [
+    "greenhouse",
+    "recruiting",
+    "ats",
+    "hiring",
+    "talent",
+    "scorecards",
+    "pipeline"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Greenhouse",
+        "shortDescription": "Hiring workflows on Greenhouse",
+        "longDescription": "Greenhouse is a hiring platform. This plugin brings your Greenhouse recruiting data into chat for recruiters, coordinators and hiring teams: a daily brief, the week's interviews, where a candidate stands, interview debriefs, pipeline and source reviews for a job, draft scorecards from your own notes, and an access check. Most answers can open as a page. Reads follow your Greenhouse permissions. Before it adds a note, moves a candidate to a new stage or saves a draft scorecard, it shows you the change and waits for your yes. It sends reminders only through your own chat or email tool. Greenhouse MCP is in open beta.",
+        "developerName": "Greenhouse Software, Inc.",
+        "category": "Business & Operations",
+        "websiteURL": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+        "supportURL": "https://support.greenhouse.io",
+        "privacyPolicyURL": "https://www.greenhouse.com/ai-addendum",
+        "termsOfServiceURL": "https://www.greenhouse.com/legal",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "defaultPrompt": [
+          "Give me my daily recruiting brief",
+          "Review the pipeline for one of my open reqs",
+          "Set up Greenhouse and check what data you can see"
+        ]
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Check the connection and what the signed-in user can see",
+              "prompt": "Set up Greenhouse and check what data you can see.",
+              "tools_triggered": "whoami, list_users, list_jobs, list_applications",
+              "expected_behavior": "Confirms the connection, names the matched Greenhouse user, lists their open reqs with application counts, and says which workflows their access supports. Changes nothing in Greenhouse."
+            },
+            {
+              "description": "Daily recruiting brief across the user's open reqs",
+              "prompt": "Give me my daily recruiting brief.",
+              "tools_triggered": "list_users, search_jobs, list_applications, list_scorecards, list_job_stages",
+              "expected_behavior": "Summarises the user's open reqs: decisions waiting, scorecards started but not submitted, quiet and new candidates, and a status word per req, with each item linked to Greenhouse. Changes nothing in Greenhouse."
+            },
+            {
+              "description": "Pipeline review for one open req",
+              "prompt": "Review the pipeline for one of my open reqs.",
+              "tools_triggered": "search_jobs, get_job, list_job_stages, list_applications, list_scorecards",
+              "expected_behavior": "Picks the req or asks which one, then shows applications by stage, a status word with the numbers behind it, late-stage candidates with feedback counts, and questions for the hiring-manager sync. Changes nothing in Greenhouse."
+            },
+            {
+              "description": "Where one candidate stands",
+              "prompt": "Find the newest applicant on my open reqs and tell me where they stand.",
+              "tools_triggered": "list_applications, list_candidates, list_job_stages, list_scorecards",
+              "expected_behavior": "Names the candidate and req, then gives status, stage k of n, days since last activity, scorecards submitted and outstanding, and what happens next. Changes nothing in Greenhouse."
+            },
+            {
+              "description": "Debrief brief, then a note written only after confirmation",
+              "prompt": "Prep the debrief for a candidate on my open reqs who has submitted scorecards, then add a note that the panel recommends moving forward.",
+              "tools_triggered": "search_applications, list_scorecards, list_users, list_job_stages, add_candidate_note",
+              "expected_behavior": "Builds an evidence brief from the submitted scorecards (rating tally, one row per interviewer, who still owes feedback), shows the exact note text, and calls add_candidate_note only after the user says yes. Without a yes, nothing is written."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General writing that needs no Greenhouse data",
+              "prompt": "Write a job description for a senior data engineer."
+            },
+            {
+              "description": "Interview scheduling is not supported",
+              "prompt": "Schedule a phone screen with the candidate for Thursday at 2pm."
+            },
+            {
+              "description": "Deleting candidates is not supported",
+              "prompt": "Delete every rejected candidate from Greenhouse."
+            }
+          ]
+        }
+      }
+    }
+  }
+}

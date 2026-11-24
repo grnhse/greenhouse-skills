@@ -2,6 +2,12 @@
 
 All notable changes to the Greenhouse plugin. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-11-23
+
+### Added
+
+- An OpenAI plugin manifest (`plugin.json`, Agent Plugins format) and MCP config (`mcp.json`) beside the existing ones, so the same plugin folder uploads to OpenAI's plugin directory. The MCP config uses OAuth with client ID metadata document registration and holds no credentials or headers; `assets/icon.png` is the listing icon and logo. The linter keeps both manifests in step.
+
 ## [0.1.0] - 2026-10-16
 
 First release. Greenhouse MCP is in open beta; the plugin runs in any AI assistant that supports plugins and MCP connectors, in the desktop or web app and in a command-line client.
@@ -35,4 +41,5 @@ The complete list of writes in this release. The skills are written to preview e
 - `create_scorecard` with `status: draft` in `scorecard-draft`, for the user's own interview only.
 - A message through the user's own connected chat or email tool, outside Greenhouse: an interviewer nudge in `daily-brief` (step 8) and `interview-week` (step 9), the hiring-manager message in `pipeline-review` (step 5). Each skill gates it in its own step: the whole message and its one named recipient are shown, the draft ends with a line asking for a yes (`Reply yes to send this to <interviewer name>.` for a nudge, `Reply "yes" to send.` for the hiring-manager message), one message goes out per explicit yes, to that person and never a channel or group; a nudge carries no ratings, notes or contact details, and the hiring-manager message no ratings, scorecard text, contact details or compensation. Asked to post somewhere shared, `daily-brief` and `interview-week` send a counts-only snapshot (`daily-brief`: counts only, no names, confidential reqs counted and not named; `interview-week`: counts and times only, no candidate names) to the destination shown, one send on an explicit yes.
 
+[0.2.0]: https://github.com/grnhse/greenhouse-skills/releases/tag/v0.2.0
 [0.1.0]: https://github.com/grnhse/greenhouse-skills/releases/tag/v0.1.0
