@@ -56,7 +56,7 @@ For Greenhouse users acting in their work capacity. Not for anyone under 18, and
 ## Your controls
 
 - What the assistant can see: the data categories you tick at consent, within the ceiling your Site Admin sets under Configure > Dev Center > MCP Access.
-- Stopping access: disconnect Greenhouse in the plugin's Connectors tab (or `/mcp` in a command-line client), or disconnect the tool under **My Info > Greenhouse MCP Connections** in Greenhouse. A Site Admin can invalidate every MCP connection in the organization by changing the scopes on the MCP Access page.
+- Stopping access: disconnect Greenhouse in your app's plugin or connector settings (or the MCP command, often `/mcp`, in a command-line client), or disconnect the tool under **My Info > Greenhouse MCP Connections** in Greenhouse. A Site Admin can invalidate every MCP connection in the organization by changing the scopes on the MCP Access page.
 - Pages and messages: say "in chat" and no page is made; delete a page file whenever you like; the skills send a message only on your "yes" to that exact message, and you can disconnect the chat or email tool at any time.
 - Candidate AI opt-out: when `list_ai_opt_out_statuses` is enabled (scope harvest:ai_opt_out_statuses:list, which also needs Talent Matching), the debrief checks it before reading any scorecard and is written not to summarize interview feedback for a candidate who opted out, and the pipeline review withholds feedback counts and tallies for opted-out candidates on its roster. A decision you state yourself can still be recorded. When the tool is not enabled or the call is declined, both say the status could not be checked; no row means no decision is recorded, never consent.
 
