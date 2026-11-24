@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "greenhouse",
+  "version": "0.1.0",
+  "description": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta.",
+  "author": {
+    "name": "Greenhouse Software, Inc.",
+    "url": "https://www.greenhouse.com"
+  },
+  "homepage": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+  "repository": "https://github.com/grnhse/greenhouse-skills",
+  "license": "© 2026 Greenhouse Software, Inc. Greenhouse customer use only. See LICENSE.",
+  "keywords": [
+    "greenhouse",
+    "recruiting",
+    "ats",
+    "hiring",
+    "talent",
+    "scorecards",
+    "pipeline"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Greenhouse",
+        "shortDescription": "Hiring workflows on Greenhouse",
+        "longDescription": "Recruiter workflows on your Greenhouse data: a daily brief, the week's interviews, candidate status, debriefs with confirm-first notes and stage moves, pipeline and source reviews, draft scorecards from your own notes and an access check, most shown as a page, plus Greenhouse's style on other visuals. Reads respect your Greenhouse permissions; skills preview each write or nudge and wait for your yes, and send nudges only through your own chat or email tool. Greenhouse MCP is in open beta.",
+        "developerName": "Greenhouse Software, Inc.",
+        "category": "Productivity",
+        "websiteURL": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+        "supportURL": "https://support.greenhouse.io",
+        "privacyPolicyURL": "https://www.greenhouse.com/ai-addendum",
+        "termsOfServiceURL": "https://www.greenhouse.com/legal",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "defaultPrompt": [
+          "Give me my daily recruiting brief",
+          "Review the pipeline for one of my open reqs",
+          "Set up Greenhouse and check what data you can see"
+        ]
+      }
+    }
+  }
+}
