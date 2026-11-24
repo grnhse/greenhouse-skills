@@ -49,7 +49,7 @@ Private notes never go on the page, even when the user asked to see them in chat
 
    The outputs folder is where your app keeps files it shows the user (its outputs directory; in a terminal app the session's scratch or temporary directory, never the user's project). On success it prints the path of the page. No data file is written, so there is nothing to delete.
 3. If it prints problems, fix the data and run it again, twice at most. Never edit `page.html`, and never write or patch the HTML yourself.
-4. Show the page the way your app shows files (its file tool, or a link to the file), giving it that path. After it, say nothing more than "The page is up." or what you could not build.
+4. Show the page at that path the way your app shows files (its file tool, or a link to the file), or as a rendered document when your app shows them beside the chat. After it, say nothing more than "The page is up." or what you could not build.
 5. However the page gets made, the user never hears how: no mention of Python, code, scripts, a builder, files or folders, and no "since your app can..." or "because I can't run...". They asked a question; they get the answer and a page.
 
 If Python cannot run, or the build still fails after two fixes, write the page yourself as "Without Python" below says. If the app can show neither a file nor a rendered document: send the chat reply on its own and add one plain line, "I couldn't open a page here, so it's all in chat: ask for any section."
