@@ -9,6 +9,7 @@ import re
 import struct
 import subprocess
 import sys
+import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PLUGIN = ROOT / "greenhouse"
@@ -41,6 +42,32 @@ SHARED_PAGE_FILES = ("page.html", "build_page.py")
 MAX_PLUGIN_FILES = 512
 MAX_FILE_BYTES = 256 * 1024
 ROLES = ("core", "required", "enhancement", "write")
+OPENAI_PLUGIN_SCHEMA = "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
+OPENAI_MCP_SCHEMA = "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json"
+OPENAI_PLUGIN_KEYS = {"$schema", "name", "version", "description", "author", "homepage", "repository",
+                      "license", "keywords", "extensions"}
+OPENAI_TEXT_LIMITS = {"displayName": 30, "shortDescription": 30, "longDescription": 4000, "developerName": 80}
+OPENAI_ONE_LINE_KEYS = ("displayName", "shortDescription", "developerName")
+LINE_BREAK = re.compile("[\n\r\u2028\u2029]")
+OPENAI_URL_KEYS = ("websiteURL", "supportURL", "privacyPolicyURL", "termsOfServiceURL")
+OPENAI_ICON_KEYS = ("composerIcon", "logo")
+OPENAI_CATEGORIES = {"Productivity", "Creativity", "Developer Tools", "Business & Operations", "Data & Analytics",
+                     "Communication", "Education & Research", "Security", "Finance", "Healthcare", "Travel",
+                     "Entertainment", "Other"}
+OPENAI_MCP_KEYS = {"$schema", "mcpServers"}
+OPENAI_SERVER_KEYS = {"type", "url", "extensions"}
+OPENAI_SERVER_EXTENSION_KEYS = {"com.openai"}
+OPENAI_SERVER_VENDOR_KEYS = {"auth"}
+CLAUDE_SERVER_KEYS = {"type", "url"}
+OPENAI_AUTH = {"type": "oauth", "client": {"mode": "cimd"}}
+MANIFEST_SYNC = (("name", "name"), ("version", "version"), ("description", "description"), ("author", "author"),
+                 ("homepage", "homepage"), ("repository", "repository"), ("license", "license"),
+                 ("keywords", "keywords"), ("displayName", "interface.displayName"),
+                 ("homepage", "interface.websiteURL"), ("supportUrl", "interface.supportURL"),
+                 ("privacyPolicyUrl", "interface.privacyPolicyURL"),
+                 ("termsOfServiceUrl", "interface.termsOfServiceURL"))
+CREDENTIAL_KEYS = {"headers", "env", "clientid", "client_id", "clientsecret", "client_secret", "apikey", "api_key",
+                   "token", "access_token", "authorization"}
 
 errors = []
 
@@ -238,6 +265,118 @@ def check_icon(path):
         fail(path, "must be under 2 MB")
 
 
+def dig(data, *keys):
+    for key in keys:
+        data = data.get(key) if isinstance(data, dict) else None
+    return data
+
+
+def check_keys(path, data, allowed, label):
+    unknown = set(data) - allowed if isinstance(data, dict) else set()
+    if unknown:
+        fail(path, f"unknown {label} keys: {sorted(unknown)}")
+
+
+def normalize_prompt(text):
+    return " ".join(unicodedata.normalize("NFKC", text).split())
+
+
+def check_no_credentials(path, data):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key.lower() in CREDENTIAL_KEYS:
+                fail(path, f"{key!r} key; MCP configs must not carry credentials, client IDs or headers")
+            check_no_credentials(path, value)
+    elif isinstance(data, list):
+        for value in data:
+            check_no_credentials(path, value)
+
+
+def check_openai_interface(path, iface):
+    for key, limit in OPENAI_TEXT_LIMITS.items():
+        value = iface.get(key)
+        if not isinstance(value, str) or not value:
+            fail(path, f"interface.{key} missing")
+        elif len(value) > limit:
+            fail(path, f"interface.{key} is {len(value)} chars (max {limit})")
+    for key in OPENAI_ONE_LINE_KEYS:
+        if LINE_BREAK.search(str(iface.get(key, ""))):
+            fail(path, f"interface.{key} must be one line")
+    if re.search(r"plugin|mcp", str(iface.get("displayName", "")), re.I):
+        fail(path, "interface.displayName must not contain 'plugin' or 'MCP'")
+    if iface.get("category") not in OPENAI_CATEGORIES:
+        fail(path, f"interface.category must be one of {sorted(OPENAI_CATEGORIES)}")
+    for key in OPENAI_URL_KEYS:
+        value = str(iface.get(key, ""))
+        if not value.startswith("https://") or len(value) > 1024:
+            fail(path, f"interface.{key} must be an https URL of at most 1024 chars")
+    for key in OPENAI_ICON_KEYS:
+        value = str(iface.get(key, ""))
+        target = (PLUGIN / value).resolve()
+        if (not value.startswith("./") or ".." in pathlib.PurePosixPath(value).parts
+                or PLUGIN not in target.parents):
+            fail(path, f"interface.{key} must be a ./ path without .. to a file inside greenhouse/")
+        else:
+            check_icon(target)
+    prompts = iface.get("defaultPrompt", [])
+    if (not isinstance(prompts, list) or len(prompts) > 3
+            or any(not isinstance(p, str) or len(p) > 128 or LINE_BREAK.search(p) for p in prompts)
+            or len({normalize_prompt(p) for p in prompts}) != len(prompts)):
+        fail(path, "interface.defaultPrompt must be at most 3 unique one-line strings of at most 128 chars")
+
+
+def check_openai_plugin(claude_pj):
+    path = PLUGIN / "plugin.json"
+    if not path.exists():
+        fail(path, "missing; OpenAI reads the plugin manifest from here")
+        return
+    pj = json.loads(path.read_text())
+    if pj.get("$schema") != OPENAI_PLUGIN_SCHEMA:
+        fail(path, f"$schema must be {OPENAI_PLUGIN_SCHEMA}")
+    check_keys(path, pj, OPENAI_PLUGIN_KEYS, "top-level")
+    name = str(pj.get("name", ""))
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name) or len(name) > 64:
+        fail(path, "name must be kebab-case, at most 64 chars")
+    if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", str(pj.get("version", ""))):
+        fail(path, "version must be semver X.Y.Z")
+    if len(str(pj.get("description", ""))) > 1024:
+        fail(path, "description is over 1024 chars")
+    iface = dig(pj, "extensions", "com.openai", "interface")
+    if not isinstance(iface, dict):
+        fail(path, "extensions.com.openai.interface missing")
+        iface = {}
+    check_openai_interface(path, iface)
+    for claude_key, openai_key in MANIFEST_SYNC:
+        scope, _, key = openai_key.rpartition(".")
+        if (iface if scope else pj).get(key) != claude_pj.get(claude_key):
+            fail(path, f"{openai_key} must equal .claude-plugin/plugin.json {claude_key}")
+
+
+def check_openai_mcp(claude_server_url):
+    path = PLUGIN / "mcp.json"
+    if not path.exists():
+        fail(path, "missing; OpenAI reads the MCP server config from here")
+        return
+    mcp = json.loads(path.read_text())
+    check_no_credentials(path, mcp)
+    check_keys(path, mcp, OPENAI_MCP_KEYS, "top-level")
+    if mcp.get("$schema") != OPENAI_MCP_SCHEMA:
+        fail(path, f"$schema must be {OPENAI_MCP_SCHEMA}")
+    server = dig(mcp, "mcpServers", "greenhouse")
+    if list(mcp.get("mcpServers") or {}) != ["greenhouse"] or not isinstance(server, dict):
+        fail(path, "expected exactly one server 'greenhouse' under mcpServers")
+        return
+    check_keys(path, server, OPENAI_SERVER_KEYS, "server")
+    check_keys(path, server.get("extensions"), OPENAI_SERVER_EXTENSION_KEYS, "server extensions")
+    check_keys(path, dig(server, "extensions", "com.openai"), OPENAI_SERVER_VENDOR_KEYS, "extensions.com.openai")
+    if server.get("type") != "streamable-http":
+        fail(path, "server type must be streamable-http")
+    if server.get("url") != claude_server_url:
+        fail(path, "server url must equal .mcp.json greenhouse url")
+    if dig(server, "extensions", "com.openai", "auth") != OPENAI_AUTH:
+        fail(path, f"extensions.com.openai.auth must be {json.dumps(OPENAI_AUTH)}")
+
+
 def check_plugin():
     pj = json.loads((PLUGIN / ".claude-plugin" / "plugin.json").read_text())
     changelog = (ROOT / "CHANGELOG.md").read_text() if (ROOT / "CHANGELOG.md").exists() else ""
@@ -265,8 +404,10 @@ def check_plugin():
         fail(PLUGIN / ".mcp.json", f"expected exactly one server 'greenhouse' at {MCP_URL}")
     if servers.get("greenhouse", {}).get("type") not in {"http", "sse", "ws"}:
         fail(PLUGIN / ".mcp.json", "remote server needs type http, sse or ws")
-    if "description" in servers.get("greenhouse", {}):
-        fail(PLUGIN / ".mcp.json", "server-level description key may fail schema validation")
+    check_keys(PLUGIN / ".mcp.json", servers.get("greenhouse"), CLAUDE_SERVER_KEYS, "server")
+    check_no_credentials(PLUGIN / ".mcp.json", mcp)
+    check_openai_mcp(servers.get("greenhouse", {}).get("url"))
+    check_openai_plugin(pj)
     files, tracked_ignored = plugin_files()
     if tracked_ignored:
         fail(PLUGIN, f"{len(tracked_ignored)} tracked files match .gitignore, e.g. "
