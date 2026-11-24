@@ -17,6 +17,10 @@ python3 .github/scripts/inject_shared_rules.py          # rewrite every data ski
 python3 .github/scripts/inject_shared_rules.py --check  # CI mode
 ```
 
+### Manifests
+
+The plugin folder carries two manifests for one plugin: `.claude-plugin/plugin.json` with `.mcp.json`, and the Agent Plugins `plugin.json` with `mcp.json` at the folder root, which OpenAI's plugin portal reads. Edit them together. The linter fails unless both give the same name, version, description, author, URLs, keywords and display name, and both MCP configs point at the same server. `mcp.json` declares OAuth with client ID metadata document registration (`client.mode: cimd`); neither config may hold credentials, a client ID or headers. OpenAI's listing fields sit under `extensions.com.openai.interface`, held to the portal's limits (display name and short description 30 characters, long description 4000), and `composerIcon` and `logo` point to a square PNG in `assets/`.
+
 ### Before you open a PR
 
 ```
@@ -26,9 +30,9 @@ claude plugin validate --strict ./greenhouse
 claude plugin validate --strict .
 ```
 
-All of them must pass; the last two run the plugin CLI, at the version pinned in `.github/workflows/validate.yml`. The linter checks frontmatter keys, that the description is one double-quoted line of 120-1024 characters (aim for 300-900), the kebab-case name, the 200-line and 32 KiB limits, that every tool a skill mentions (bare or as a call shape) is in `.github/scripts/tool_catalog.json` and in that skill's `metadata` (`core`, `enhancement`, `write`), that forbidden tools (including any `bulk_` or `delete_` tool), `mcp__` prefixes, plugin-root variables in paths, `!` dynamic context and `references/` paths are absent, that `confirm` is never passed to a write, that `/greenhouse:<skill>` references resolve, that a style skill carries no rules block and names no tool, that a skill folder holds only `SKILL.md` and an optional `page/` folder with exactly its four files, that `page.html` and `build_page.py` are byte-identical across skills, that the plugin folder holds no other code, no hooks, junk files, symlinks or Windows-invalid names, no tracked file that `.gitignore` matches, no more than 512 files a commit would hold and no file other than an image or font over 256 KiB, and that `plugin.json`'s version equals the first CHANGELOG heading.
+All of them must pass; the last two run the plugin CLI, at the version pinned in `.github/workflows/validate.yml`. The linter checks frontmatter keys, that the description is one double-quoted line of 120-1024 characters (aim for 300-900), the kebab-case name, the 200-line and 32 KiB limits, that every tool a skill mentions (bare or as a call shape) is in `.github/scripts/tool_catalog.json` and in that skill's `metadata` (`core`, `enhancement`, `write`), that forbidden tools (including any `bulk_` or `delete_` tool), `mcp__` prefixes, plugin-root variables in paths, `!` dynamic context and `references/` paths are absent, that `confirm` is never passed to a write, that `/greenhouse:<skill>` references resolve, that a style skill carries no rules block and names no tool, that a skill folder holds only `SKILL.md` and an optional `page/` folder with exactly its four files, that `page.html` and `build_page.py` are byte-identical across skills, that the plugin folder holds no other code, no hooks, junk files, symlinks or Windows-invalid names, no tracked file that `.gitignore` matches, no more than 512 files a commit would hold and no file other than an image or font over 256 KiB, that `.claude-plugin/plugin.json`'s version equals the first CHANGELOG heading, and the manifest rules under Manifests.
 
-Manual checks: `claude --plugin-dir ./greenhouse` in a command-line client that supports plugin directories, and a zip of the committed plugin folder (`git archive --format=zip -o greenhouse.zip HEAD:greenhouse`) uploaded through **Customize > Plugins > Add > Upload plugin** in the desktop or web app. Don't zip the working folder: it also holds gitignored files, the eval suite among them.
+Manual checks: `claude --plugin-dir ./greenhouse` in a command-line client that supports plugin directories, and a zip of the committed plugin folder (`git archive --format=zip -o greenhouse.zip HEAD:greenhouse`) uploaded through **Customize > Plugins > Add > Upload plugin** in the desktop or web app. The same zip goes to OpenAI's plugin portal (**Upload plugin** at platform.openai.com/plugins, on the **With MCP** path, since **Skills only** drops the MCP config) and must upload with no package errors. Don't zip the working folder: it also holds gitignored files, the eval suite among them.
 
 ### Evals
 
@@ -47,7 +51,7 @@ The eval suite lives in the gitignored `greenhouse/evals/` folder on the maintai
 ### Commits and versions
 
 - Conventional Commits, scoped to the skill when there is one: `fix(daily-brief): shorten the footnote`.
-- `greenhouse/.claude-plugin/plugin.json` `version` equals the first heading in `CHANGELOG.md`; bump both in the same commit and tag `vX.Y.Z` on main.
+- `version` in `greenhouse/.claude-plugin/plugin.json` and `greenhouse/plugin.json` equals the first heading in `CHANGELOG.md`; bump all three in the same commit and tag `vX.Y.Z` on main. The OpenAI portal asks for confirmation when an upload reuses the published version.
 - The plugin CLI version pinned in `.github/workflows/validate.yml` is bumped to the current release in the same PR as each version bump, and whenever a `plugin validate` change is announced.
 - Patch: wording, degradation and documentation fixes. Minor: a new skill or a new write. Major: removing a skill or changing what an existing write does.
 
