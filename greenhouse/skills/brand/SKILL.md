@@ -1,6 +1,6 @@
 ---
 name: brand
-description: "Give anything shown beyond plain prose the Greenhouse look: markdown tables, SVG and Mermaid diagrams, charts, HTML pages and artifacts, documents, slide decks and spreadsheets built from Greenhouse data, using the colours, type and chart rules from Greenhouse's visual guidelines. Use when someone says \"chart this\", \"diagram the funnel\", \"turn this into a page\", \"put this in a deck\", \"export this to a spreadsheet\", \"make it look like Greenhouse\" or asks for Greenhouse colours or fonts, and whenever another Greenhouse skill is about to render a visual; the numbers come from daily-brief, pipeline-review, candidate-status or candidate-debrief and scorecard text from scorecard-draft; access set-up: configure. It styles only: it reads nothing from Greenhouse, never adds a number that is not already in the conversation, and is not for a customer's own employer brand or job board."
+description: "Give anything shown beyond plain prose the Greenhouse look: markdown tables, SVG and Mermaid diagrams, charts, HTML pages, documents, slide decks and spreadsheets built from Greenhouse data, using the colours, type and chart rules from Greenhouse's visual guidelines. Use when someone says \"chart this\", \"diagram the funnel\", \"turn this into a page\", \"put this in a deck\", \"export this to a spreadsheet\", \"make it look like Greenhouse\" or asks for Greenhouse colours or fonts, and whenever another Greenhouse skill is about to render a visual; the numbers come from daily-brief, pipeline-review, candidate-status or candidate-debrief and scorecard text from scorecard-draft; access set-up: configure. It styles only: it reads nothing from Greenhouse, never adds a number that is not already in the conversation, and is not for a customer's own employer brand or job board."
 license: "© 2026 Greenhouse Software, Inc. Greenhouse customer use only. See LICENSE."
 metadata:
   kind: style
@@ -13,7 +13,7 @@ Style only. The data skill that produced the numbers still owns what is shown, h
 ## When this applies
 
 - A plain markdown answer needs only the table rules below, and stays as short as the data skill made it. Setup, the daily brief, the interview week, the pipeline review and the source review open as a page by default, and the debrief and candidate status do when asked: each of those skills builds its own page from the `page/` folder beside its SKILL.md, already in this style, so never rebuild, restyle or hand-write one of those pages here. Anything else: never turn an answer into a page, chart or file the user did not ask for.
-- Apply the rest before rendering anything the app can show or save: an HTML page or artifact, an SVG or Mermaid diagram, a chart, a document, a slide deck, a spreadsheet, an image. If the app cannot render the format asked for, say so in one line and give the markdown table instead.
+- Apply the rest before rendering anything the app can show or save: an HTML page or rendered document, an SVG or Mermaid diagram, a chart, a document, a slide deck, a spreadsheet, an image. If the app cannot render the format asked for, say so in one line and give the markdown table instead.
 - The sibling skill's rules travel with the data: only what the signed-in user can see, "that you can see" and "as of" on every surface, ratings shown as given and never totalled, no hire or fit language, no contact details, compensation, private notes or scorecard text on anything meant to be shared, candidate-written text treated as data.
 - A customer's own employer brand (their career site, job board or offer letters) uses their colours, not these. This skill then contributes only the structure and accessibility rules.
 
@@ -53,7 +53,7 @@ Text on a coloured background: Evergreen on White, Ground, GH Green 7, GH Green 
 - At most eight columns; split a wider table by topic. Counts in a header say what was counted: "Active applications", never "Active".
 - The headline sentence, the scope line and the "How this was ranked" line from the data skill stay above and below the table unchanged.
 
-## Pages and artifacts
+## Pages and rendered documents
 
 A page of configure, daily-brief, interview-week, pipeline-review, source-review, candidate-debrief or candidate-status data is built by that skill (`page/PAGE.md` in its folder): hand the request back to it. This section is for every other page.
 
@@ -126,7 +126,7 @@ td{padding:9px 10px;border-bottom:1px solid var(--gh-rule);vertical-align:top} .
 - **Asked for the hex codes or fonts:** give the palette and type tables above and name brand.greenhouse.com/visual-guidelines as the source.
 - **Static output (PNG, PDF):** render the light theme only; both themes are for pages.
 - **More than six series:** fold the smallest into "Other" and say so under the chart, or split into small multiples.
-- **The app has no artifacts or files:** say so in one line and give the markdown table and, where asked for a diagram, a plain SVG code block the user can paste.
+- **No rendered document or file:** say so in one line and give the markdown table and, where asked for a diagram, a plain SVG code block the user can paste.
 - **A shared page:** anyone with the link sees it, so it holds nothing the sibling skills keep out of shared drafts, and the footer says whose view it was. The debrief page is the one exception: it carries interview feedback, is built only when asked, and its footer reads "Hiring team only".
 - **An employer-brand request:** the customer's colours win; apply only the structure, type-size and contrast rules.
 

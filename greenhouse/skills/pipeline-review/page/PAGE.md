@@ -2,7 +2,7 @@
 
 Read this before answering. Finish the skill's steps, then pick the first shape that fits:
 
-1. **Page and a short reply.** Your app can show a file or an artifact, and the user did not ask for chat only (the builder makes the page; where Python cannot run you write it, as "Without Python" says). Build the page (Build, below) and send the short reply.
+1. **Page and a short reply.** Your app can show a file or a rendered document (one it renders beside the chat), and the user did not ask for chat only (the builder makes the page; where Python cannot run you write it, as "Without Python" says). Build the page (Build, below) and send the short reply.
 2. **Short reply only.** No page is possible, or the user asked for chat ("in chat", "no page", "I'm on my phone"). Stay in chat for the rest of the conversation unless they ask for the page.
 3. **One part, or the full review, in chat.** Only when the user asks ("show me the funnel", "the roster", "full review", "how was this judged?"): give that part of "Output, full version" at the end of this file, and all of it only for "full review".
 
@@ -60,21 +60,21 @@ A private candidate: `"private": true` in place of `name`. An opted-out candidat
    GH_PAGE_DATA
    ```
 
-   The outputs folder is where your app keeps files it shows the user (its outputs or artifacts directory; in a terminal app the session's scratch or temporary directory, never the user's project). On success it prints the path of the page. No data file is written, so there is nothing to delete.
+   The outputs folder is where your app keeps files it shows the user (its outputs directory; in a terminal app the session's scratch or temporary directory, never the user's project). On success it prints the path of the page. No data file is written, so there is nothing to delete.
 3. If it prints problems, fix the data and run it again, twice at most. Never edit `page.html`, and never write or patch the HTML yourself.
-4. Show the page with your app's own file or artifact tool, giving it that path. After it, say nothing more than "The page is up." or what you could not build.
+4. Show the page at that path the way your app shows files (its file tool, or a link to the file), or as a rendered document when your app shows them beside the chat. After it, say nothing more than "The page is up." or what you could not build.
 5. However the page gets made, the user never hears how: no mention of Python, code, scripts, a builder, files or folders, and no "since your app can..." or "because I can't run...". They asked a question; they get the answer and a page.
 
-If Python cannot run, or the build still fails after two fixes, write the page yourself as "Without Python" below says. If the app has no way to show a file or an artifact at all: send the short reply on its own and add one plain line, "I couldn't open a page here, so it's all in chat: ask for any section."
+If Python cannot run, or the build still fails after two fixes, write the page yourself as "Without Python" below says. If the app can show neither a file nor a rendered document: send the short reply on its own and add one plain line, "I couldn't open a page here, so it's all in chat: ask for any section."
 
 To keep it quick: read this file in your first turn, alongside the skill's first Greenhouse calls, not after them; keep each batch of Greenhouse calls in one turn; write the data once, compactly, with no keys the format does not ask for.
 
 ## Without Python
 
-The same page written by hand, for an app that can show an artifact or an HTML file and cannot run the builder. It is a still page, not an app, so keep it small and it stays quick.
+The same page written by hand, for an app that can show a rendered document or an HTML file and cannot run the builder. It is a still page, not an app, so keep it small and it stays quick.
 
 1. Send the short reply first, as always. This page has no buttons, so where the reply says what the page can do, say only where the rest is ("It's all on the page."): nothing about filtering, copying or prompts on rows.
-2. Write one self-contained HTML document, as an artifact when your app has them and otherwise as a file with the name this file gives. Copy this frame and its style block exactly, and change only the words in capitals and the rows:
+2. Write one self-contained HTML document, as a rendered document when your app shows them beside the chat, and otherwise as a file with the name this file gives. Copy this frame and its style block exactly, and change only the words in capitals and the rows:
 
    ```html
    <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TITLE</title>
