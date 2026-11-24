@@ -348,11 +348,12 @@ def check_openai_plugin(claude_pj):
     check_openai_interface(path, iface)
     for claude_key, openai_key in MANIFEST_SYNC:
         scope, _, key = openai_key.rpartition(".")
-        if (iface if scope else pj).get(key) != claude_pj.get(claude_key):
-            fail(path, f"{openai_key} must equal .claude-plugin/plugin.json {claude_key}")
+        actual, expected = (iface if scope else pj).get(key), claude_pj.get(claude_key)
+        if actual != expected:
+            fail(path, f"{openai_key} is {actual!r}; must equal .claude-plugin/plugin.json {claude_key} ({expected!r})")
 
 
-def check_openai_mcp(claude_server_url):
+def check_openai_mcp():
     path = PLUGIN / "mcp.json"
     if not path.exists():
         fail(path, "missing; OpenAI reads the MCP server config from here")
@@ -371,8 +372,8 @@ def check_openai_mcp(claude_server_url):
     check_keys(path, dig(server, "extensions", "com.openai"), OPENAI_SERVER_VENDOR_KEYS, "extensions.com.openai")
     if server.get("type") != "streamable-http":
         fail(path, "server type must be streamable-http")
-    if server.get("url") != claude_server_url:
-        fail(path, "server url must equal .mcp.json greenhouse url")
+    if server.get("url") != MCP_URL:
+        fail(path, f"server url is {server.get('url')!r}; must be {MCP_URL}")
     if dig(server, "extensions", "com.openai", "auth") != OPENAI_AUTH:
         fail(path, f"extensions.com.openai.auth must be {json.dumps(OPENAI_AUTH)}")
 
@@ -406,7 +407,7 @@ def check_plugin():
         fail(PLUGIN / ".mcp.json", "remote server needs type http, sse or ws")
     check_keys(PLUGIN / ".mcp.json", servers.get("greenhouse"), CLAUDE_SERVER_KEYS, "server")
     check_no_credentials(PLUGIN / ".mcp.json", mcp)
-    check_openai_mcp(servers.get("greenhouse", {}).get("url"))
+    check_openai_mcp()
     check_openai_plugin(pj)
     files, tracked_ignored = plugin_files()
     if tracked_ignored:
